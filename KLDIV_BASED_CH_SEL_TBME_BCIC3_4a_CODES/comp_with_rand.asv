@@ -1,0 +1,67 @@
+
+
+% clear
+% 
+% 
+% selected_channels_rand = zeros(118,10);
+% for i = 1:10
+%     rng(i*5647*i^2)
+%     selected_channels_rand(:,i) = randperm(118,118);
+% end
+% 
+
+
+clc
+clear 
+close all
+figure(1)
+
+load('RESULTS_COMP_RAND_BCIC3.mat')
+for i = 1: 5
+    
+    hold on
+    for j = 3:118
+        x(j) = RESULTS_BCIC3_4A(j,i).avg_results(1);
+    end
+    plot(x,'DisplayName',string(i),'LineWidth',3)
+end
+
+legend
+
+grid on
+
+hold off
+%%
+rand_res = (load('RESULTS_COMP_RAND_BCIC3.mat'));
+best_rand = 2;
+
+sub_indp = load('RESULTS_ALL_SUBJECT_WITH_SUB_INDP.mat');
+
+
+for i = 3:118
+    
+    x(i) = rand_res.RESULTS_BCIC3_4A(i,2).avg_results(1);
+    
+    y(i) = sub_indp.RESULTS_BCIC3_4A(i,2).avg_results(1);
+    
+end
+
+x(1:)
+
+figure(2)
+plot(y,'DisplayName',"Sub Indp")
+hold on
+plot(x,'DisplayName',"Random")
+legend
+grid on
+
+
+
+
+
+
+
+
+
+
+
