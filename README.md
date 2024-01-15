@@ -6,7 +6,7 @@ Please do not use this code yet without exclusive permission. This code is to re
 
 All rights are reserved with the authors.
 
-Raghav Dev (C) Copyright Reserved 
+
 
 
 
